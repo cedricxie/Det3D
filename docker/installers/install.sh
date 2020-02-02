@@ -2,10 +2,20 @@
 set -e
 
 # Install necessary apps.
-apt-get update && apt-get install -y apt-utils autoconf nano wget libboost-all-dev
+apt-get update && apt-get install -y apt-utils \
+                                     autoconf \
+                                     nano \
+                                     wget \
+                                     libboost-all-dev \
+                                     software-properties-common \
+                                     python-setuptools \
+                                     sudo \
+                                     mlocate \
+                                     libsm6 \
+                                     libxext6 \
+                                     libxrender-dev
 
-# Install sudo and mlocate
-apt-get update && apt-get install -y sudo mlocate
+# Update for locate.
 updatedb
 
 # Install user.
