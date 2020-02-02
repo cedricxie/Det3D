@@ -2,6 +2,10 @@ import argparse
 import json
 import os
 import sys
+sys.path.append("/home/yxie/shared_dir/Det3D/")
+sys.path.append("/home/yxie/shared_dir/nuscenes/")
+sys.path.append("/home/yxie/shared_dir/apex/")
+# print(sys.path)
 
 import numpy as np
 import torch
