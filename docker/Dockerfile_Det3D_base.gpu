@@ -1,0 +1,27 @@
+# A list of NVIDIA docker images.
+# https://hub.docker.com/r/nvidia/cuda
+# Nvidia driver / CUDA compatibility.
+# https://github.com/NVIDIA/nvidia-docker/wiki/CUDA
+# FROM nvidia/cuda:10.1-cudnn7-devel-ubuntu16.04
+
+# A list Pytorch docker images.
+# https://hub.docker.com/r/pytorch/pytorch/
+FROM pytorch/pytorch:1.2-cuda10.0-cudnn7-devel
+
+ENV DEBIAN_FRONTEND=noninteractive
+
+# Copy installers.
+COPY installers /tmp/installers
+
+# Run root level installs.
+RUN bash /tmp/installers/install.sh
+
+# Define environment variables.
+ENV USERNAME yxie
+
+# Change user.
+USER $USERNAME
+WORKDIR /home/$USERNAME
+
+# User level commands.
+RUN bash /tmp/installers/post_install.sh
