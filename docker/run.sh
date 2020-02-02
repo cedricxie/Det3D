@@ -9,7 +9,7 @@ fi
 
 XSOCK=/tmp/.X11-unix
 XAUTH=/home/$USER/.Xauthority
-SHARED_DIR=/home/yx/shared_dir
+SHARED_DIR=/home/yxie/shared_dir
 HOST_DIR=/home/$USER/shared_dir
 
 mkdir -p $HOST_DIR
