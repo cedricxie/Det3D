@@ -8,7 +8,8 @@ sudo apt update
 sudo apt install cmake
 
 # Install necessary packages.
-# TBD.
+# Bash Git Prompt
+git clone https://github.com/magicmonty/bash-git-prompt.git ~/.bash-git-prompt --depth=1
 
 # Install visual studio code.
 cd ~/

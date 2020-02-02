@@ -11,6 +11,7 @@ apt-get update && apt-get install -y apt-utils \
                                      python-setuptools \
                                      sudo \
                                      mlocate \
+                                     tmux \
                                      libsm6 \
                                      libxext6 \
                                      libxrender-dev
