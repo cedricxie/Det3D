@@ -1,6 +1,8 @@
 import copy
 from pathlib import Path
 import pickle
+import sys
+sys.path.append("/home/yxie/shared_dir/nuscenes/")
 
 import fire
 

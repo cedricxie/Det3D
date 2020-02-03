@@ -1,7 +1,7 @@
 #!/bin/bash
 TASK_DESC=$1
 DATE_WITH_TIME=`date "+%Y%m%d-%H%M%S"`
-OUT_DIR=/home/yxie/shared_dir/Det3D/KITTI_3D_Object/outputs
+OUT_DIR=//media/yxie/BE946C29946BE27F/KITTI_3D_Object/outputs
 
 NUSC_CBGS_WORK_DIR=$OUT_DIR/NUSC_CBGS_$TASK_DESC\_$DATE_WITH_TIME
 LYFT_CBGS_WORK_DIR=$OUT_DIR/LYFT_CBGS_$TASK_DESC\_$DATE_WITH_TIME
@@ -23,3 +23,4 @@ fi
 # PointPillars
 # python -m torch.distributed.launch --nproc_per_node=8 ./tools/train.py ./examples/point_pillars/configs/kitti_point_pillars_mghead_syncbn.py --work_dir=$PP_WORK_DIR
 python ./tools/train.py ./examples/point_pillars/configs/kitti_point_pillars_mghead_syncbn.py --work_dir=$PP_WORK_DIR
+# python ./tools/train.py ./examples/second/configs/kitti_car_vfev3_spmiddlefhd_rpn1_mghead_syncbn.py --work_dir=$SECOND_WORK_DIR

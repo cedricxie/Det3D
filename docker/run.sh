@@ -11,6 +11,8 @@ XSOCK=/tmp/.X11-unix
 XAUTH=/home/$USER/.Xauthority
 SHARED_DIR=/home/yxie/shared_dir
 HOST_DIR=/home/$USER/shared_dir
+SHARED_MEDIA_DIR=/media/yxie
+HOST_MEDIA_DIR=/media/$USER
 
 mkdir -p $HOST_DIR
 echo "Shared directory: ${HOST_DIR}"
@@ -18,6 +20,7 @@ echo "Shared directory: ${HOST_DIR}"
 docker run \
     -it --rm \
     --volume=$HOST_DIR:$SHARED_DIR:rw \
+    --volume=$HOST_MEDIA_DIR:$SHARED_MEDIA_DIR:rw \
     --volume=$XSOCK:$XSOCK:rw \
     --volume=$XAUTH:$XAUTH:rw \
     --env="XAUTHORITY=${XAUTH}" \
@@ -28,5 +31,6 @@ docker run \
     -v /dev/bus/usb:/dev/bus/usb \
     -v /dev/video0:/dev/video0 \
     --net=host \
-    --gpus all \
+    --ipc=host \
+    --gpus=all \
     $DOCKER_NAME
