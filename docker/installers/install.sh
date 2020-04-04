@@ -28,7 +28,6 @@ echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 
 echo """
 ulimit -c unlimited
-export PATH=~/miniconda3/bin:$PATH
 export GIT_SSL_NO_VERIFY=1
 alias srcfg='source ~/shared_dir/Profile/config.sh'
 """ >> /home/${USER_NAME}/.bashrc
